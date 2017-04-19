@@ -58,7 +58,7 @@ double genspline(int nmax, double x0, double xfin, double *xar, double *a, doubl
 
 double spl_exp(double x, double x0, double delta, double *xar, double *a, double *b)
 {
-  genspline(100, x0, x0 + nmax*delta, xar, a, b);
+  genspline(100, x0, x0 + 100*delta, xar, a, b);
   int i = floor(x - x0)/delta;
 
   return a[i] + b[i] * (x - xar[i - 1]);
