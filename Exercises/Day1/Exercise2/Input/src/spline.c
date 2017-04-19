@@ -1,5 +1,5 @@
-/* 
-   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com> 
+/*
+   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com>
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -43,32 +43,34 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 double genspline(int nmax, double x0, double xfin, double *xar, double *a, double *b)
 {
     double delta1;
-    int i; 
+    int i;
     delta1 = nmax;
     delta1 = (xfin - x0)/delta1;
     xar[0] = x0;
     for (i=1; i <= nmax; ++i) {
         xar[i] = xar[i-1] + delta1;
         a[i] = exp(xar[i-1]);
-        b[i] = (exp(xar[i])-a[i])/delta1; 
+        b[i] = (exp(xar[i])-a[i])/delta1;
     }
  return delta1;
  };
 
-             
+
 double spl_exp(double x, double x0, double delta, double *xar, double *a, double *b)
 {
-/*  WRITE YOUR SUBROUTINE HERE  */
+  genspline(100, x0, x0 + nmax*delta, xar, a, b);
+  int i = floor(x - x0)/delta;
 
+  return a[i] + b[i] * (x - xar[i - 1]);
  };
 
-                                           
-/* 
+
+/*
  * Local Variables:
  * mode: c
  * compile-command: "make -C .."
  * c-basic-offset: 4
- * fill-column: 76 
- * indent-tabs-mode: nil 
- * End: 
+ * fill-column: 76
+ * indent-tabs-mode: nil
+ * End:
  */
