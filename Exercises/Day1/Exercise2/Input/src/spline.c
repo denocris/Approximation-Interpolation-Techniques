@@ -59,7 +59,7 @@ double genspline(int nmax, double x0, double xfin, double *xar, double *a, doubl
 double spl_exp(double x, double x0, double delta, double *xar, double *a, double *b)
 {
   //int i = floor(x - x0)/delta + 1;
-  int i = 1;
+  int i = 0;
   while( x > xar[i]){
     i += 1;
   }
