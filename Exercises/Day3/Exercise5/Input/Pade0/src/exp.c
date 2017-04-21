@@ -105,7 +105,7 @@ double adv_pad_exp(double x){
 
    const double log2e = 1.44269504088896340735992;
    const double y = log2e * x;
-   double fpart;
+   const double fpart;
 
    const int iy = (int)(y + 0.5) - (x < -0.5); // integer part
    const double fy = (y - iy); // non-integer part
@@ -120,11 +120,9 @@ double adv_pad_exp(double x){
    qx = adv_pad_exp_p[3] + ff;
    qx = ff * qx + adv_pad_exp_p[4];
 
-   fpart = 1. + 2. * px/(qx - px);
+   fpart = 1. + 2.*px/(qx - px);
 
    if (iy >= 0) {
-     printf("-----\n");
-
      return fpart * (2 << iy);
     }
    else{
