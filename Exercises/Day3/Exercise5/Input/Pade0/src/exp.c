@@ -124,7 +124,7 @@ double adv_pad_exp(double x){
    if (iy >= 0) {
    return fpart * (2 << iy);
     } else
-   return fpart * 1 / (2 << -1*iy);
+   return fpart * 1. / (2 << -1*iy);
 
   }
 
