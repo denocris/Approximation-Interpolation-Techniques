@@ -98,14 +98,13 @@ double t_exp(double x)
      4.36821166879210612817e3,
      };
 
-   double adv_pad_exp(double x)
-      {
+   double adv_pad_exp(double x){
 
    double  px, qx;
 
    double log2e = 1.442695040888963407359924681001892137426645954152985934135;
    double y = log2e * x;
-   double 2fpart;
+   double fpart;
 
    int iy = (int)(y + 0.5); // integer part
    double fy = (y - iy); // non-integer part
@@ -120,10 +119,11 @@ double t_exp(double x)
    qx = adv_pad_exp_p[3] + ff;
    qx = ff * qx +  adv_pad_exp_p[4];
 
-   2fpart = 1. + 2. * px / (qx - px);
+   fpart = 1. + 2. * px / (qx - px);
 
-   return 2fpart * (2 << iy);
- }
+   return fpart * (2 << iy);
+
+  }
 
 
 
