@@ -103,7 +103,7 @@ double adv_pad_exp(double x){
 
    double  px, qx;
 
-   const double log2e = 1.442695040888963407359924681001892137426645954152985934135;
+   const double log2e = 1.44269504088896340735992;
    const double y = log2e * x;
    double fpart;
 
