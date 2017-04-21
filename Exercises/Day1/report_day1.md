@@ -2,7 +2,22 @@
 
 ### Ex1: Taylor Approximation vs Pade Approximation
 
-Everything (timing and error analysis) can be found in the notebook 'day1.ipynb'.
+Everything (timing and error analysis) can be found in the notebook 'day1.ipynb'. The fastest implementation is the numpy one. We alredy know that, since numpy usually uses an optimized algorithm.
+
+A plot of different Taylor approximations
+![Figure_1](taylorapp.png)
+One can easily see that:
+* The approximation behaves badly on the boudary of the interval
+* Higher the degree the better
+
+A log-plot that shows the different behaviour between Taylor and Pade
+![Figure_2](taylorvspade.png)
+One can easily see that the Padè well approximate the exponential in the constant region, but then behaves badly for $x > 5$.
+
+
+
+An error analysis was also performed
+![Figure_3](error.png)
 
 ### Ex2: Spline Approximation
 
