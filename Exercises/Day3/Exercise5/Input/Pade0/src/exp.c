@@ -126,6 +126,7 @@ double adv_pad_exp(double x){
      return fpart * (2 << iy);
     }
    else{
+    printf("-----\n");
      return fpart * 1. / (2 << -1*iy);
   }
 
