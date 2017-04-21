@@ -123,12 +123,12 @@ double adv_pad_exp(double x){
    const double fpart = 1. + 2.*px/(qx - px);
 
    if (iy >= 0) {
-     printf("%f\n",pow(2,fy) - fpart);
-     return fpart * (2 << iy);
+     //printf("%f\n",pow(2,fy) - fpart);
+     return fpart * (1 << iy);
     }
    else{
-     printf("%f\n",pow(2,fy) - fpart);
-     return fpart * 1. / (2 << -1*iy);
+     //printf("%f\n",pow(2,fy) - fpart);
+     return fpart * 1. / (1 << -1*iy);
   }
 
   }
