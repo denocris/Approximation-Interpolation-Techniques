@@ -123,10 +123,11 @@ double adv_pad_exp(double x){
    fpart = 1. + 2. * px/(qx - px);
 
    if (iy >= 0) {
+     printf("-----\n");
+
      return fpart * (2 << iy);
     }
    else{
-    printf("-----\n");
      return fpart * 1. / (2 << -1*iy);
   }
 
