@@ -126,7 +126,7 @@ double adv_pad_exp(double x){
    //printf("%i \t %.5f \t %.5f \n", iy, pow(2,fy), fpart);
 
    if (iy >= 0) {
-   printf("%.5f \n", fpart * (2 << iy);
+   printf("%.5f \n", fpart * (2 << iy));
    return fpart * (2 << iy);
     } else
    return fpart * 1. / (2 << -1*iy);
