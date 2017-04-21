@@ -101,11 +101,11 @@ double t_exp(double x)
    double adv_pad_exp(double x)
       {
    double  px, qx;
-   double xx = x * x
+   double xx = x * x;
 
    px = adv_pad_exp_p[1] + xx * adv_pad_exp_p[0];
    px = xx * px + adv_pad_exp_p[2];
-   px = px * x
+   px = px * x;
 
    qx = adv_pad_exp_p[3] + xx;
    qx = xx * qx +  adv_pad_exp_p[4];
@@ -124,7 +124,7 @@ double t_exp(double x)
    int iy = (int)(y + 0.5); // integer part
    double fy = (y - iy); // non-integer part
 
-   return adv_pade_exp(y - iy)*(2 << iy);
+   return adv_pade_exp(fy)*(2 << iy);
  }
 
 
