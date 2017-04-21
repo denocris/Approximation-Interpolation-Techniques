@@ -116,7 +116,7 @@ double t_exp(double x)
 
 
 
- double advanced_t_exp(double x){
+ double advanced_pade_exp(double x){
 
    double log2e = 1.442695040888963407359924681001892137426645954152985934135;
    double y = log2e * x;
