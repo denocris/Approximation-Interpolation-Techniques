@@ -121,7 +121,7 @@ double adv_pad_exp(double x){
 
    fpart = 1. + 2. * px / (qx - px);
 
-   printf("%i \t %f \t %f\n", iy, fy, y);
+   printf("%i \t %f \t %f\n", iy, pow(2,fy), fpart);
 
    if (iy >= 0) {
    return fpart * (2 << iy);
