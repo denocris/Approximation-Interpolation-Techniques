@@ -153,6 +153,9 @@ int main(int argc, char **argv)
     RUN_LOOP(xval,rest,pad_exp,double);
     DOUBLE_ERROR(res0,rest);
 
+    RUN_LOOP(xval,rest,adv_pad_exp,double);
+    DOUBLE_ERROR(res0,rest);
+
 
     free(xval);
     free(res0);

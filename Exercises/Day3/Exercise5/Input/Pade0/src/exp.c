@@ -1,5 +1,5 @@
-/* 
-   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com> 
+/*
+   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com>
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -45,7 +45,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          5.00000000000000000000e-1,
          1.00000000000000000000e0,
          };
-                   
+
        double pad_exp(double x)
           {
        double  px, qx;
@@ -65,9 +65,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
      }
 
 
-
-
-
 static const double fm_exp_t[] __attribute__ ((aligned(_FM_ALIGN))) = {
     1.00000000000000000000e0,
     5.00000000000000000000e-1,
@@ -77,8 +74,8 @@ static const double fm_exp_t[] __attribute__ ((aligned(_FM_ALIGN))) = {
     1.38888888888888888888e-3,
     1.98412698412698412698e-4
 };
-    
- 
+
+
 double t_exp(double x)
 {
     double   tx;
@@ -93,13 +90,50 @@ double t_exp(double x)
  return tx;
  }
 
+ static const double adv_pad_exp_p[] __attribute__ ((aligned(_FM_ALIGN))) = {
+     2.30933477057345225087e-2,
+     2.02020656693165307700e1,
+     1.51390680115615096133e3,
+     2.33184211722314911771e2,
+     4.36821166879210612817e3,
+     };
 
-/* 
+   double adv_pad_exp(double x)
+      {
+   double  px, qx;
+   double xx = x * x
+
+   px = adv_pad_exp_p[1] + xx * adv_pad_exp_p[0];
+   px = xx * px + adv_pad_exp_p[2];
+   px = px * x
+
+   qx = adv_pad_exp_p[3] + xx;
+   qx = xx * qx +  adv_pad_exp_p[4];
+
+   x = 1. + 2. * px / (qx - px);
+  return x;
+ }
+
+
+
+ double advanced_t_exp(double x){
+
+   double log2e = 1.442695040888963407359924681001892137426645954152985934135;
+   double y = log2e * x;
+
+   int iy = (int)(y + 0.5); // integer part
+   double fy = (y - iy); // non-integer part
+
+   return adv_pade_exp(y - iy)*(2 << iy);
+ }
+
+
+/*
  * Local Variables:
  * mode: c
  * compile-command: "make -C .."
  * c-basic-offset: 4
- * fill-column: 76 
- * indent-tabs-mode: nil 
- * End: 
+ * fill-column: 76
+ * indent-tabs-mode: nil
+ * End:
  */
