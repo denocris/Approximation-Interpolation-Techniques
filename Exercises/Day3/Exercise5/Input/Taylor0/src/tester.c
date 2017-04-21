@@ -108,7 +108,7 @@ int main(int argc, char **argv)
         r2 = xscale * ((double) rand());
         rsum = 0.5*(r1+r2);
         //xval[i] = 20.0 * rsum  - 10.0;
-        xval[i] = 10.0 * rsum  - 5.0;  // new interval for smaller error
+        xval[i] = 5.0 * rsum  - 2.5;  // new interval for smaller error
         //xval[i] = 1.0 * rsum  - .5;  // new interval for smaller error
         xvalf[i] = (float) xval[i];
         err += xval[i];
