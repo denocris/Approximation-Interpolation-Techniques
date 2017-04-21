@@ -107,11 +107,11 @@ double adv_pad_exp(double x){
    const double y = log2e * x;
    double fpart;
 
-   int iy = (int)(y + 0.5) - (x < -0.5); // integer part
-   double fy = (y - iy); // non-integer part
+   const int iy = (int)(y + 0.5) - (x < -0.5); // integer part
+   const double fy = (y - iy); // non-integer part
 
    // ----------- Non - Integer Part--------------
-   double ff = fy * fy;
+   const double ff = fy * fy;
 
    px = adv_pad_exp_p[1] + ff * adv_pad_exp_p[0];
    px = ff * px + adv_pad_exp_p[2];
