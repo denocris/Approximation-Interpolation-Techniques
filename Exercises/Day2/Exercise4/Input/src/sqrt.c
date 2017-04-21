@@ -1,5 +1,5 @@
-/* 
-   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com> 
+/*
+   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com>
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -42,23 +42,29 @@ float invsqrt(float number)
 
 float Q_rsqrt( float number )
 {
-        long i;
+  long i;
 	float x2, y;
 	const float threehalfs = 1.5F;
- 
+
 	x2 = number * 0.5F;
        /*  WRITE YOUR SUBROUTINE HERE  */
+
+  y  = number;
+  i  = * ( long * ) &y;
+  i  = 0x5f3759df - ( i >> 1 );
+  y  = * ( float * ) &i;
+  y  = y * ( threehalfs - ( x2 * y * y ) );
 
 //        y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
 	return y;
 }
 
-/* 
+/*
  * Local Variables:
  * mode: c
  * compile-command: "make -C .."
  * c-basic-offset: 4
- * fill-column: 76 
- * indent-tabs-mode: nil 
- * End: 
+ * fill-column: 76
+ * indent-tabs-mode: nil
+ * End:
  */
