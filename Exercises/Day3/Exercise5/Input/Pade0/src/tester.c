@@ -1,5 +1,5 @@
-/* 
-   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com> 
+/*
+   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com>
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -101,13 +101,14 @@ int main(int argc, char **argv)
     err = sumerr = 0.0;
     xscale = 1.0 / ((double) RAND_MAX);
     start = wallclock(NULL);
-    /* random numbers distributed between -10.0 and 10.0 */ 
+    /* random numbers distributed between -10.0 and 10.0 */
     for (i=0; i < num; ++i) {
         double r1,r2,rsum;
         r1 = xscale * ((double) rand());
         r2 = xscale * ((double) rand());
         rsum = 0.5*(r1+r2);
-        xval[i] = 20.0 * rsum  - 10.0;
+        //xval[i] = 20.0 * rsum  - 10.0;
+        xval[i] = 10.0 * rsum  - 5.0;
         xvalf[i] = (float) xval[i];
         err += xval[i];
         sumerr += xval[i]*xval[i];
@@ -147,12 +148,12 @@ int main(int argc, char **argv)
     printf("numreps %d\n", rep);
 
     RUN_LOOP(xval,rest,t_exp,double);
-    DOUBLE_ERROR(res0,rest);  
-        
+    DOUBLE_ERROR(res0,rest);
+
     RUN_LOOP(xval,rest,pad_exp,double);
-    DOUBLE_ERROR(res0,rest);      
-         
-        
+    DOUBLE_ERROR(res0,rest);
+
+
     free(xval);
     free(res0);
     free(res1);
@@ -210,12 +211,12 @@ int main(int argc, char **argv)
 
 }
 
-/* 
+/*
  * Local Variables:
  * mode: c
  * compile-command: "make -C .."
  * c-basic-offset: 4
- * fill-column: 76 
- * indent-tabs-mode: nil 
- * End: 
+ * fill-column: 76
+ * indent-tabs-mode: nil
+ * End:
  */
