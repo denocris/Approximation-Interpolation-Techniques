@@ -129,7 +129,7 @@ double adv_pad_exp(double x){
    //printf("%.5f \n", fpart * (2 << iy));
    return fpart * (2 << iy);
  } else{
-   printf("%.5f \n", fpart * 1. / (2 << -1*iy));
+   //printf("%.5f \n", fpart * 1. / (2 << -1*iy));
    return fpart * 1. / (2 << -1*iy);
  }
 
