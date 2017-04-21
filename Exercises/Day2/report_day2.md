@@ -4,6 +4,16 @@
 
 The exercise can be found in 'NewtonRaphson_Method.ipynb'.
 
+| Iteration   |      Error      |
+|----------|:-------------:|
+| 3 |  0.068332 |
+| 4 |  0.001128 |
+| 5 | 3.183e-07|
+| 7 | 0.000e+00 |
+
+Below a figure of the Newton-Rapshon Method
+![Figure_1](nr.png)
+
 ### Fast Square Root - Magic numbers
 
 The implementation is the following:
