@@ -1,5 +1,5 @@
-/* 
-   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com> 
+/*
+   Copyright (c) 2012,2013   Axel Kohlmeyer <akohlmey@gmail.com>
    All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
@@ -47,6 +47,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* prototypes for the exported interface */
 FM_FUNC_DECL1(double,t_exp);
 FM_FUNC_DECL1(double,pad_exp);
+FM_FUNC_DECL1(double,adv_pad_exp);
 
 FM_FUNC_DECL1(double,fm_exp);
 FM_FUNC_DECL1(double,fm_exp2);
@@ -80,12 +81,12 @@ FM_FUNC_DECL1(float,fm_log10f_alt);
 
 #endif /* FASTERMATH_H */
 
-/* 
+/*
  * Local Variables:
  * mode: c
  * compile-command: "make"
  * c-basic-offset: 4
- * fill-column: 76 
- * indent-tabs-mode: nil 
- * End: 
+ * fill-column: 76
+ * indent-tabs-mode: nil
+ * End:
  */
