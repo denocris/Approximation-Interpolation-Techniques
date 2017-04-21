@@ -120,7 +120,7 @@ double adv_pad_exp(double x){
    qx = adv_pad_exp_p[3] + ff;
    qx = ff * qx +  adv_pad_exp_p[4];
 
-   fpart = 1. + 2. * px / (qx - px);
+   fpart = 1. + 2. * px/(qx - px);
 
    if (iy >= 0) {
    return fpart * (2 << iy);
