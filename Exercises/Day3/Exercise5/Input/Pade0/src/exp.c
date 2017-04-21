@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "fastermath.h"
 #include "fm_internal.h"
+#include <math.h>
 
 /*  Seriani: basic Pade` implementation of exp(x).
  */
