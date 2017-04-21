@@ -36,7 +36,7 @@ double adv_pad_exp(double x){
   }
 ```
 
-Running the code on Ulysses, the result are the following for different sizes for the interval
+Running the code on Ulysses, the result are the following for different sizes of the interval
 
 ```
 ____________________________________
